@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diesel AI V1</title>
+</head>
+<body style="font-family: Arial; padding: 20px;">
+
+  <h2>Diagnóstico Diesel</h2>
+
+  <input id="input" placeholder="Ej: SPN 157 FMI 18" />
+  <button onclick="buscar()">Buscar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function buscar() {
+      const valor = document.getElementById("input").value;
+
+      if (valor === "SPN 157 FMI 18") {
+        document.getElementById("resultado").innerText =
+          "Baja presión de combustible. Revisar bomba, filtros o aire en sistema.";
+      } else {
+        document.getElementById("resultado").innerText =
+          "No encontrado aún.";
+      }
+    }
+  </script>
+
+</body>
+</html>
