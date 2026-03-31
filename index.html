@@ -1,30 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Diesel AI V1</title>
+<meta charset="UTF-8">
+<title>Diesel AI</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background: #111827;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.7);
+    width: 400px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    color: #38bdf8;
+  }
+
+  input {
+    width: 70%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #1f2937;
+    color: white;
+  }
+
+  button {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: none;
+    background: #38bdf8;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  button:hover {
+    background: #0ea5e9;
+  }
+
+  .resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #1f2937;
+    font-size: 14px;
+  }
+</style>
 </head>
-<body style="font-family: Arial; padding: 20px;">
 
-  <h2>Diagnóstico Diesel</h2>
+<body>
 
-  <input id="input" placeholder="Ej: SPN 157 FMI 18" />
+<div class="container">
+  <h2>🚛 Diesel AI</h2>
+
+  <input id="input" placeholder="Ej: SPN 157 FMI 18">
   <button onclick="buscar()">Buscar</button>
 
-  <p id="resultado"></p>
+  <div class="resultado" id="resultado">
+    Resultado aparecerá aquí...
+  </div>
+</div>
 
-  <script>
-    function buscar() {
-      const valor = document.getElementById("input").value;
+<script>
+function buscar() {
+  const valor = document.getElementById("input").value;
 
-      if (valor === "SPN 157 FMI 18") {
-        document.getElementById("resultado").innerText =
-          "Baja presión de combustible. Revisar bomba, filtros o aire en sistema.";
-      } else {
-        document.getElementById("resultado").innerText =
-          "No encontrado aún.";
-      }
-    }
-  </script>
+  if (valor === "SPN 157 FMI 18") {
+    document.getElementById("resultado").innerText =
+      "🔧 Baja presión de combustible.\nRevisar bomba, filtros o aire en sistema.";
+  } else {
+    document.getElementById("resultado").innerText =
+      "❌ No encontrado aún.";
+  }
+}
+</script>
 
 </body>
 </html>
